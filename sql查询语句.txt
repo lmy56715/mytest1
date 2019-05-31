@@ -1,0 +1,22 @@
+查询列名和属性：
+select column_name,data_type from information_schema.columns where table_schema='数据库名' and  table_name='表名'
+
+mapper.xml中update方法：
+select
+concat(
+concat( 
+concat(
+concat(column_name,'='),'#{'),column_name),'},') 
+from information_schema.columns where table_schema='数据库名' and   table_name='表名'
+
+
+添加数据的    字段名称,
+select
+concat(column_name,',') 
+from information_schema.columns where  table_schema='数据库名' and  table_name='表名'
+
+添加字段后value值后的#{字段名},
+select
+concat(
+concat('#{',column_name),'},') 
+from information_schema.columns where  table_schema='数据库名' and   table_name='表名'
